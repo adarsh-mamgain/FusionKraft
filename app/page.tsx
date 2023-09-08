@@ -146,17 +146,9 @@ const Home = () => {
           <p className="mt-2 text-sm text-gray-500">max-height: 200px *</p>
         </div>
       </div>
-      <div className="flex items-center justify-center m-4 p-4 md:p-20 space-x-8 md:space-x-16 border rounded-xl">
+      <div className="flex flex-col md:flex-row items-center justify-center m-4 p-4 md:p-20 space-y-20 md:space-y-none md:space-x-8 md:space-x-16 border rounded-xl">
         <img
           className="animate-pulse"
-          src="https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
-          alt="Lazy-loaded Image"
-          loading="lazy"
-          width="300"
-          height="200"
-        />
-        <img
-          className="animate-spin"
           src="https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
           alt="Lazy-loaded Image"
           loading="lazy"
