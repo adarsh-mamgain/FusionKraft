@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 
 const Home = () => {
@@ -29,26 +29,24 @@ const Home = () => {
   }, [user.name, user.bgColor, user.fontColor, user.width, user.height]);
 
   return (
-    <div className="flex flex-col items-center p-10">
+    <div className="flex flex-col items-center p-10 text-white">
       <h1 className="text-3xl font-bold mb-4">FusionKraft Showcase</h1>
 
-      <div className="flex items-center justify-center m-4 space-x-8 md:space-x-16">
-        <div>
+      <div className="flex items-center justify-center m-4 p-4 md:p-20 space-x-8 md:space-x-16 border rounded-xl">
+        <div className="">
           <h2 className="text-2xl font-bold mb-3">useState Hook</h2>
-          <p className="text-neutral-600">
-            import useState from "react";
-          </p>
+          <p className="text-gray-400">import useState from "react";</p>
           <div className="mt-4">
             <label
               htmlFor="name"
-              className="block text-neutral-800 font-medium mb-1"
+              className="block text-gray-300 font-medium mb-1"
             >
               Name:
             </label>
             <input
               type="text"
               id="name"
-              className="bg-neutral-100 border rounded py-2 px-3 w-full"
+              className="bg-gray-800 border rounded py-2 px-3 w-full"
               value={user.name}
               onChange={(e) =>
                 setUser((prevUser) => ({
@@ -58,11 +56,8 @@ const Home = () => {
               }
             />
           </div>
-          <div className="mt-2">
-            <label
-              htmlFor="bgcolor"
-              className="block text-neutral-800 font-medium mb-1"
-            >
+          <div className="block flex justify-between mt-4">
+            <label htmlFor="bgcolor" className="text-gray-300 font-medium mb-1">
               Background Color:
             </label>
             <input
@@ -77,10 +72,10 @@ const Home = () => {
               }
             />
           </div>
-          <div className="mt-2">
+          <div className="block flex justify-between mt-4">
             <label
               htmlFor="fontcolor"
-              className="block text-neutral-800 font-medium mb-1"
+              className="block text-gray-300 font-medium mb-1"
             >
               Font Color:
             </label>
@@ -96,10 +91,10 @@ const Home = () => {
               }
             />
           </div>
-          <div className="mt-2">
+          <div className="mt-4">
             <label
               htmlFor="width"
-              className="block text-neutral-800 font-medium mb-1"
+              className="block text-gray-300 font-medium mb-1"
             >
               Width (px):
             </label>
@@ -107,7 +102,7 @@ const Home = () => {
               type="number"
               id="width"
               value={user.width}
-              className="bg-neutral-100 border rounded py-2 px-3 w-full"
+              className="bg-gray-800 border rounded py-2 px-3 w-full"
               onChange={(e) =>
                 setUser((prevUser) => ({
                   ...prevUser,
@@ -116,10 +111,10 @@ const Home = () => {
               }
             />
           </div>
-          <div className="mt-2">
+          <div className="mt-4">
             <label
               htmlFor="height"
-              className="block text-neutral-800 font-medium mb-1"
+              className="block text-gray-300 font-medium mb-1"
             >
               Height (px):
             </label>
@@ -127,7 +122,7 @@ const Home = () => {
               type="number"
               id="height"
               value={user.height}
-              className="bg-neutral-100 border rounded py-2 px-3 w-full"
+              className="bg-gray-800 border rounded py-2 px-3 w-full"
               onChange={(e) =>
                 setUser((prevUser) => ({
                   ...prevUser,
@@ -147,9 +142,37 @@ const Home = () => {
               {user.name ? `Welcome, ${user.name}!` : "Enter Name"}
             </p>
           </div>
+          <p className="mt-4 text-sm text-gray-500">max-width: 300px *</p>
+          <p className="mt-2 text-sm text-gray-500">max-height: 200px *</p>
         </div>
       </div>
-      <footer className="mt-8 text-neutral-500">
+      <div className="flex items-center justify-center m-4 p-4 md:p-20 space-x-8 md:space-x-16 border rounded-xl">
+        <img
+          className="animate-pulse"
+          src="https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
+          alt="Lazy-loaded Image"
+          loading="lazy"
+          width="300"
+          height="200"
+        />
+        <img
+          className="animate-spin"
+          src="https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
+          alt="Lazy-loaded Image"
+          loading="lazy"
+          width="300"
+          height="200"
+        />
+        <img
+          className="animate-bounce"
+          src="https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
+          alt="Lazy-loaded Image"
+          loading="lazy"
+          width="300"
+          height="200"
+        />
+      </div>
+      <footer className="mt-8 text-gray-400">
         <p>
           Built by{" "}
           <a
