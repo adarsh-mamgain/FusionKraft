@@ -36,7 +36,7 @@ const Home = () => {
         <div>
           <h2 className="text-2xl font-bold mb-3">useState Hook</h2>
           <p className="text-neutral-600">
-            import &#123; useState &#125; from "react";
+            import useState from "react";
           </p>
           <div className="mt-4">
             <label
