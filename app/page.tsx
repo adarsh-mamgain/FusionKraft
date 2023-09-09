@@ -1,5 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+import TodoApp from "@/component/ToDo";
+import CompoundInterestCalculator from "@/component/CompoundInterestCalculator";
+import ShowImage from "@/component/ShowImage";
 
 const Home = () => {
   const [user, setUser] = useState({
@@ -28,13 +31,28 @@ const Home = () => {
     }));
   }, [user.name, user.bgColor, user.fontColor, user.width, user.height]);
 
+  const [theme, setTheme] = useState("light"); // Default theme is "light"
+
+  const lightThemeClass = "bg-white text-black";
+  const darkThemeClass = "bg-black text-white";
+
+  useEffect(() => {
+    document.documentElement.className =
+      theme === "light" ? lightThemeClass : darkThemeClass;
+  }, [theme]);
+
+  // Toggle theme function
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <div className="flex flex-col items-center p-10 text-white">
-      <h1 className="text-3xl font-bold mb-4">FusionKraft Showcase</h1>
+      <h1 className="text-3xl font-bold mb-5">FusionKraft Showcase</h1>
 
       <div className="flex items-center justify-center m-4 p-4 md:p-20 space-x-8 md:space-x-16 border rounded-xl">
         <div className="">
-          <h2 className="text-2xl font-bold mb-3">useState Hook</h2>
+          <h2 className="text-3xl font-bold mb-4">useState Hook</h2>
           <p className="text-gray-400">import useState from "react";</p>
           <div className="mt-4">
             <label
@@ -146,24 +164,20 @@ const Home = () => {
           <p className="mt-2 text-sm text-gray-500">max-height: 200px *</p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center m-4 p-4 md:p-20 space-y-20 md:space-y-none md:space-x-8 md:space-x-16 border rounded-xl">
-        <img
-          className="animate-pulse"
-          src="https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
-          alt="Lazy-loaded Image"
-          loading="lazy"
-          width="300"
-          height="200"
-        />
-        <img
-          className="animate-bounce"
-          src="https://as2.ftcdn.net/v2/jpg/00/97/58/97/1000_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
-          alt="Lazy-loaded Image"
-          loading="lazy"
-          width="300"
-          height="200"
-        />
-      </div>
+
+      <TodoApp />
+
+      <CompoundInterestCalculator />
+      
+      <ShowImage />
+
+      <button
+        className="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        onClick={toggleTheme}
+      >
+        Toggle Theme
+      </button>
+
       <footer className="mt-8 text-gray-400">
         <p>
           Built by{" "}
